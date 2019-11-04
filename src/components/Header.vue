@@ -20,7 +20,6 @@ export default {
 <style lang="scss" scoped>
     header {
         position: relative;
-        height: 21rem;
         background-image: linear-gradient(#1D5297, #1D5297);
         color: #ffffff;
         text-align: center;
@@ -45,8 +44,8 @@ export default {
         }
 
         ul {
-            width: 73%;
-            margin: 2rem auto;
+            width: 80%;
+            margin: 0 auto;
             padding: 0;
             padding-left: 1.25rem;
         }
@@ -62,8 +61,10 @@ export default {
         }
 
         img {
-            position: relative;
-            top: .8rem;
+            position: absolute;
+            bottom: -1.9rem;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 </style>
