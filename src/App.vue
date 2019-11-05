@@ -2,6 +2,7 @@
   <div id="app">
     <Navbar />
     <Header />
+    <RadioBar />
     <ProductCard />
   </div>
 </template>
@@ -10,6 +11,7 @@
 import Navbar from "./components/Navbar.vue";
 import Header from "./components/Header.vue";
 import ProductCard from "./components/ProductCard.vue";
+import RadioBar from "./components/RadioBar.vue";
 
 export default {
   name: "app",
@@ -17,6 +19,7 @@ export default {
     Navbar,
     Header,
     ProductCard,
+    RadioBar,
   }
 };
 </script>
