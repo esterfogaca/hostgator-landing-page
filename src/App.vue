@@ -19,13 +19,13 @@ export default {
     Navbar,
     Header,
     ProductCard,
-    RadioBar,
+    RadioBar
   }
 };
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -33,6 +33,11 @@ export default {
 
 html {
   font-size: 5vw;
+  color: #333333;
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.085vw;
+  }
 
   @media screen and (min-width: 1200px) {
     font-size: 16px;
@@ -41,7 +46,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #F1F6FB;
+  background-color: #f1f6fb;
+  overflow-x: hidden;
 }
 
 #app {

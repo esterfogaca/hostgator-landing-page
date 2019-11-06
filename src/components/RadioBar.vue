@@ -1,94 +1,115 @@
 <template>
-    <form action="">
-        <fieldset>
-            <label for="cicle">Quero pagar a cada:</label><br />
-            <div>
-                <input type="radio" name="cicle" id="threeYears" value="3 years" checked /> 3 anos
-                <input type="radio" name="cicle" id="oneYear" value="1 year" /> 1 ano
-                <input type="radio" name="cicle" id="oneMonth" value="1 Month" /> 1 mês
-            </div>
-        </fieldset>
-    </form>
+  <form action="">
+    <fieldset>
+      <label for="cycle">Quero pagar a cada:</label><br />
+      <div>
+        <input
+          type="radio"
+          name="cycle"
+          v-model="cycle"
+          value="triennially"
+          checked
+        />
+        3 anos
+        <input type="radio" name="cycle" v-model="cycle" value="annually" /> 1
+        ano
+        <input type="radio" name="cycle" v-model="cycle" value="monthly" /> 1
+        mês
+      </div>
+    </fieldset>
+  </form>
 </template>
 
 <script>
 export default {
-    name: 'RadioBar',
-}
+  name: "RadioBar",
+  data() {
+    return {
+      cycle: "triennially"
+    };
+  },
+  updated() {
+    this.$root.$emit("cycleChange", this.cycle);
+  }
+};
 </script>
-    
+
 <style lang="scss" scoped>
-    form {
-        margin-top: 2.75rem;
-        text-align: center;
-    }
+form {
+  margin-top: -1rem;
+  text-align: center;
 
-    fieldset {
-        border: none;
-    }
+  @media screen and (min-width: 1200px) {
+    margin-top: -5rem;
+  }
+}
 
-    label {
-        font-size:.875rem;
-        color: #1D5297;
-    }
+fieldset {
+  border: none;
+}
 
-    div {
-        margin-top: 0.4556rem;
-        display: inline-block;
-        width: 18.125rem;
-        padding: .6875rem;
-        background: #FFFFFF;
-        box-shadow: 0rem .125rem .25rem #4480C570;
-        border: .0625rem solid #4480C5;
-        border-radius: 1.3125rem;
-    }
+label {
+  font-size: 0.875rem;
+  color: #1d5297;
+}
 
-    input {
-        position: relative;
-        margin-left: 1rem;
-        margin-right: 0.4rem;
+div {
+  margin-top: 0.4556rem;
+  display: inline-block;
+  width: 18.125rem;
+  padding: 0.6875rem;
+  background: #ffffff;
+  box-shadow: 0rem 0.125rem 0.25rem #4480c570;
+  border: 0.0625rem solid #4480c5;
+  border-radius: 1.3125rem;
 
-        &:before,
-        &:after {
-            content: '';
-            pointer-events: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            transition: all .3s ease;
-        }
+  @media screen and (min-width: 720px) {
+    width: 20.6875rem;
+  }
+}
 
-        &:before {
-            width: 1.125rem;
-            height: 1.125rem;
-            background-color: #FFFFFF;
-            border: 0.1rem solid #9EB8DC;
-        }
-        
-    }
+input {
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 0.4rem;
 
-    input:first-of-type {
-        margin-left: 0;
-    }
+  &:before,
+  &:after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
 
-    input:checked {
+  &:before {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: #ffffff;
+    border: 0.1rem solid #9eb8dc;
+  }
+}
 
-        &:before {
-            width: 1.125rem;
-            height: 1.125rem;
-            background: #FFFFFF;
-            border: #4480C5 solid 0.1rem;
-        }
+input:first-of-type {
+  margin-left: 0;
+}
 
-        &:after {
-            width: .6rem;
-            height: .6rem;
-            background:#4480C5;
-            border: #4480C5 solid 0.1rem;
-        }
-    }
+input:checked {
+  &:before {
+    width: 1.125rem;
+    height: 1.125rem;
+    background: #ffffff;
+    border: #4480c5 solid 0.1rem;
+  }
 
+  &:after {
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #4480c5;
+    border: #4480c5 solid 0.1rem;
+  }
+}
 </style>
-    
